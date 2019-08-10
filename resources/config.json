@@ -1,0 +1,23 @@
+{
+  "default": {
+    "appURL": "https://vacations-management.herokuapp.com/users/sign_in",
+    "user": {
+      "email": "gap-automation-test@mailinator.com",
+      "passw": "12345678"
+    }
+  },
+  "dev": {
+    "appURL": "https://vacations-management.herokuapp.com/users/sign_in",
+    "user": {
+      "email": "test@test.test",
+      "passw": "12345678"
+    }
+  },
+  "qa": {
+    "appURL": "https://vacations-management.herokuapp.com/users/sign_in",
+    "user": {
+      "email": "gap-automation-test@mailinator.com",
+      "passw": "12345678"
+    }
+  }
+}

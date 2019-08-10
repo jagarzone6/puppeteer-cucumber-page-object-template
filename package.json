@@ -4,7 +4,8 @@
   "description": "E2E Tests for vacations-management app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cucumber-js ./resources -r ./src -f json:cucumber_report.json",
+    "test:report": "node scripts/report.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/jagarzone6/vacations-management-tests-e2e#readme",
   "dependencies": {
     "cucumber": "^5.1.0",
+    "cucumber-html-reporter": "^5.0.0",
     "puppeteer": "^1.19.0"
   }
 }
