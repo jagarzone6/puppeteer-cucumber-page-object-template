@@ -1,7 +1,7 @@
 var { setWorldConstructor } = require("cucumber");
 const puppeteer = require("puppeteer");
 var { setDefaultTimeout } = require("cucumber");
-setDefaultTimeout(60 * 1000);
+setDefaultTimeout(25 * 1000);
 var config = require('./../../resources/config.json')[process.env.ENV || 'default'];
 
 class World {
