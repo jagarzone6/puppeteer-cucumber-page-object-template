@@ -9,7 +9,7 @@ class LoginAssertions {
 
     }
     async verifyLoginIsVisible() {
-        return await Promise.all([
+        return Promise.all([
             this.assert.isFulfilled(this.loginPage.driver.waitForSelector(this.loginPage.EMAIL_INPUT,{visible:true})),
             this.assert.isFulfilled(this.loginPage.driver.waitForSelector(this.loginPage.PASS_INPUT,{visible:true})),
             this.assert.isFulfilled(this.loginPage.driver.waitForSelector(this.loginPage.SUBMIT_BUTTON,{visible:true}))
@@ -17,7 +17,7 @@ class LoginAssertions {
     }
 
     async validateHomePageAfterLogin(homePage) {
-        return await Promise.all([
+        return Promise.all([
             this.assert.isFulfilled(homePage.driver.waitForSelector(homePage.LOGGED_BANNER,{visible:true})),
             this.assert.isFulfilled(homePage.driver.waitForSelector(homePage.LOGO,{visible:true})),
             this.assert.isFulfilled(homePage.driver.waitForSelector(homePage.USER_LOGGED_SPAN,{visible:true}))
