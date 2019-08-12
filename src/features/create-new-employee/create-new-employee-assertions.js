@@ -3,16 +3,16 @@ let chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
 class CreateEmployeeAssertions {
-  constructor(homePage) {
-    this.homePage = homePage;
+  constructor(usersListPage) {
+    this.usersListPage = usersListPage;
     this.assert = chai.assert;
   }
   async verifyEmployeeIsCreated(employee) {
-    let response = await this.homePage.driver.evaluate(employeeLeader => {
+    let response = await this.usersListPage.driver.evaluate((employeeLeader,cssSelector) => {
       let found = false;
       let row = 1;
       let employeeData = {};
-      document.querySelectorAll("tr").forEach(element => {
+      document.querySelectorAll(cssSelector).forEach(element => {
         if (element.children[3].textContent == employeeLeader) {
           found = true;
           employeeData.firstName = element.children[0].textContent;
@@ -24,7 +24,7 @@ class CreateEmployeeAssertions {
         if (found == false) row++;
       });
       return { found, row, employeeData };
-    }, employee.leaderName);
+    }, employee.leaderName,this.usersListPage.ROW_CSS_SELECTOR);
     await this.assert.eventually.equal(Promise.resolve(response.found), true);
     await this.assert.eventually.equal(
       Promise.resolve(response.employeeData.firstName),
