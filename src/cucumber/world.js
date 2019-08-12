@@ -11,12 +11,17 @@ class World {
     this.page = null;
     this.appURL = config.appURL;
     this.user = config.user;
+    this.newEmployee = config.newEmployee;
   }
   async launchBrowser() {
     this.browser = await this.driver.launch({ headless: false });
   }
   async goTo(page) {
     this.page = await this.browser.newPage();
+    await page.setViewport({
+      width: 1366,
+      height: 768
+    });
     await this.page.goto(page);
   }
 

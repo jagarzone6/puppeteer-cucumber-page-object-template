@@ -4,13 +4,33 @@
     "user": {
       "email": "gap-automation-test@mailinator.com",
       "passw": "12345678"
+    },
+    "newEmployee": {
+      "firstName": "James",
+      "lastName": "Smith",
+      "email": "jsmith@test.test",
+      "id": "1234567890",
+      "year": "2014",
+      "month": "1",
+      "day": "21",
+      "leaderName": "Jorge Garzon"
     }
   },
   "dev": {
     "appURL": "https://vacations-management.herokuapp.com/users/sign_in",
     "user": {
-      "email": "test@test.test",
+      "email": "gap-automation-test@mailinator.com",
       "passw": "12345678"
+    },
+    "newEmployee": {
+      "firstName": "James",
+      "lastName": "Smith",
+      "email": "jsmith@test.test",
+      "id": "1234567890",
+      "year": "2014",
+      "month": "1",
+      "day": "21",
+      "leaderName": "Jorge Garzon"
     }
   },
   "qa": {
@@ -18,6 +38,16 @@
     "user": {
       "email": "gap-automation-test@mailinator.com",
       "passw": "12345678"
+    },
+    "newEmployee": {
+      "firstName": "James",
+      "lastName": "Smith",
+      "email": "jsmith@test.test",
+      "id": "1234567890",
+      "year": "2014",
+      "month": "1",
+      "day": "21",
+      "leaderName": "Jorge Garzon"
     }
   }
 }
