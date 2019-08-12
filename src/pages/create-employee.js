@@ -17,9 +17,9 @@ class CreateEmployeePage {
         await this.driver.type(this.EMAIL_INPUT, employee.email);
         await this.driver.type(this.IDENTIFICATION_INPUT, employee.id);
         await this.driver.type(this.LEADER_NAME_INPUT, employee.leaderName);
-        await this.driver.select(this.EMPLOYEE_START_WORKING_ON_YEAR,employee.year);
-        await this.driver.select(this.EMPLOYEE_START_WORKING_ON_MONTH,employee.month);
-        await this.driver.select(this.EMPLOYEE_START_WORKING_ON_DAY,employee.day);
+        await this.driver.select(this.EMPLOYEE_START_WORKING_ON_YEAR,JSON.stringify(parseInt(employee.year,10)));
+        await this.driver.select(this.EMPLOYEE_START_WORKING_ON_MONTH,JSON.stringify(parseInt(employee.month,10)));
+        await this.driver.select(this.EMPLOYEE_START_WORKING_ON_DAY,JSON.stringify(parseInt(employee.day,10)));
         return Promise.all([
             this.driver.waitForNavigation(),
             this.driver.click(this.CREATE_EMPLOYEE_BUTTON),

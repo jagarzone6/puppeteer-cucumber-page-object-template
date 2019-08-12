@@ -1,13 +1,15 @@
 const { Given, When, Then } = require("cucumber");
-const HomePage = require("../../pages/home.js");
+const UsersListPage = require("../../pages/users-list.js");
 const CreateEmployeePage = require("../../pages/create-employee.js");
+const CreateEmployeeAssertions = require("./create-new-employee-assertions.js");
 
-let homePage;
 let createEmployeePage;
+let createEmployeeAssertions;
+let usersListPage;
 
 When("attempts to create a new employee", async function() {
-  homePage = new HomePage(this.page);
-  await homePage.clickOnCreateEmployee();
+  usersListPage = new UsersListPage(this.page);
+  await usersListPage.clickOnCreateEmployee();
   createEmployeePage = new CreateEmployeePage(this.page);
   this.newEmployee.leaderName=this.newEmployee.leaderName+ this.utils.rand(1,100000);
   this.data.leaderName = this.newEmployee.leaderName;
@@ -16,4 +18,7 @@ When("attempts to create a new employee", async function() {
 });
 
 Then("can see the new employee in employees information", async function() {
+  await this.goTo("https://vacations-management.herokuapp.com/employees");
+  createEmployeeAssertions = new CreateEmployeeAssertions(usersListPage);
+  response = await createEmployeeAssertions.verifyEmployeeIsCreated(this.newEmployee);
 });

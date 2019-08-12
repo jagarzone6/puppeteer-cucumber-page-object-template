@@ -11,7 +11,7 @@
       "email": "jsmith@test.test",
       "id": "1234567890",
       "year": "2014",
-      "month": "1",
+      "month": "01",
       "day": "21",
       "leaderName": "Jorge A"
     }
@@ -28,7 +28,7 @@
       "email": "jsmith@test.test",
       "id": "1234567890",
       "year": "2014",
-      "month": "1",
+      "month": "01",
       "day": "21",
       "leaderName": "Jorge A"
     }
@@ -45,7 +45,7 @@
       "email": "jsmith@test.test",
       "id": "1234567890",
       "year": "2014",
-      "month": "1",
+      "month": "01",
       "day": "21",
       "leaderName": "Jorge A"
     }

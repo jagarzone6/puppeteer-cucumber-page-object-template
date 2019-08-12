@@ -20,13 +20,13 @@ class World {
     this.browser = await this.driver.launch({ headless: false,
       args: [`--window-size=1466,868`]
      });
+     this.page = await this.browser.newPage();
+     await this.page.setViewport({
+       width: 1366,
+       height: 768
+     });
   }
   async goTo(page) {
-    this.page = await this.browser.newPage();
-    await this.page.setViewport({
-      width: 1366,
-      height: 768
-    });
     await this.page.goto(page);
   }
 
