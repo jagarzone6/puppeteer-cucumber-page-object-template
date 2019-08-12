@@ -20,5 +20,4 @@ Then("can see the new employee in employees information", async function() {
   createEmployeeAssertions = new CreateEmployeeAssertions(usersListPage);
   this.data.newEmployee = await createEmployeeAssertions.verifyEmployeeIsCreated(this.newEmployee);
   console.log(JSON.stringify(this.data.newEmployee))
-
 });

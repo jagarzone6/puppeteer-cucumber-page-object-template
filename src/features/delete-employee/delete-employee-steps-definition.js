@@ -13,5 +13,6 @@ When("deletes the employee", async function() {
 Then("can not see the employee anymore in employees list", async function() {
   deleteEmployeeAssertions = new DeleteEmployeeAssertions(usersListPage);
   await usersListPage.driver.waitForNavigation();
-  await deleteEmployeeAssertions.verifyEmployeeIsDeleted(this.newEmployee);
+  result = await deleteEmployeeAssertions.verifyEmployeeIsDeleted(this.newEmployee);
+  console.log(JSON.stringify(result))
 });
