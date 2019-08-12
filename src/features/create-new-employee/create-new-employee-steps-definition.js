@@ -12,7 +12,6 @@ When("attempts to create a new employee", async function() {
   await usersListPage.clickOnCreateEmployee();
   createEmployeePage = new CreateEmployeePage(this.page);
   this.newEmployee.leaderName=this.newEmployee.leaderName+ this.utils.rand(1,100000);
-  console.log("LEADER NAME: " + this.newEmployee.leaderName);
   return createEmployeePage.attemptToCreateNewEmployee(this.newEmployee);
 });
 

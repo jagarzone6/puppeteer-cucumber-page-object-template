@@ -7,7 +7,6 @@ let usersListPage;
 
 When("deletes the employee", async function() {
   usersListPage = new UsersListPage(this.page);
-  console.log(JSON.stringify(this.data.newEmployee))
   return usersListPage.clickOnDeleteEmployee(this.data.newEmployee);
 });
 

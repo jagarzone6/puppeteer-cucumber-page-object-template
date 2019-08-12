@@ -26,7 +26,7 @@ class World {
        height: 768
      });
      this.page.on('dialog', async dialog => {
-      console.log(dialog.accept());
+      dialog.accept();
     });
   }
   async goTo(page) {
