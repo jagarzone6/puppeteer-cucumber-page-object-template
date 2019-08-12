@@ -3,6 +3,7 @@ const puppeteer = require("puppeteer");
 var { setDefaultTimeout } = require("cucumber");
 setDefaultTimeout(25 * 1000);
 var config = require('./../../resources/config.json')[process.env.ENV || 'default'];
+const utils = require('./../util/utils.js')
 
 class World {
   constructor() {
@@ -12,6 +13,8 @@ class World {
     this.appURL = config.appURL;
     this.user = config.user;
     this.newEmployee = config.newEmployee;
+    this.utils = utils;
+    this.data = {};
   }
   async launchBrowser() {
     this.browser = await this.driver.launch({ headless: false,
