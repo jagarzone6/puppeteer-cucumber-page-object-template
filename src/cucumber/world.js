@@ -25,6 +25,9 @@ class World {
        width: 1366,
        height: 768
      });
+     this.page.on('dialog', async dialog => {
+      console.log(dialog.accept());
+    });
   }
   async goTo(page) {
     await this.page.goto(page);

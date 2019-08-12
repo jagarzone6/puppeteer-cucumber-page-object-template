@@ -20,4 +20,6 @@ Then("can see the new employee in employees information", async function() {
   await this.goTo("https://vacations-management.herokuapp.com/employees");
   createEmployeeAssertions = new CreateEmployeeAssertions(usersListPage);
   this.data.newEmployee = await createEmployeeAssertions.verifyEmployeeIsCreated(this.newEmployee);
+  console.log(JSON.stringify(this.data.newEmployee))
+
 });

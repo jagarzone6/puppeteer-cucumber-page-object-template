@@ -8,23 +8,7 @@ class CreateEmployeeAssertions {
     this.assert = chai.assert;
   }
   async verifyEmployeeIsCreated(employee) {
-    let response = await this.usersListPage.driver.evaluate((employeeLeader,cssSelector) => {
-      let found = false;
-      let row = 1;
-      let employeeData = {};
-      document.querySelectorAll(cssSelector).forEach(element => {
-        if (element.children[3].textContent == employeeLeader) {
-          found = true;
-          employeeData.firstName = element.children[0].textContent;
-          employeeData.lastName = element.children[1].textContent;
-          employeeData.id = element.children[2].textContent;
-          employeeData.leaderName = element.children[3].textContent;
-          employeeData.dateStartedWorking = element.children[4].textContent;
-        }
-        if (found == false) row++;
-      });
-      return { found, row, employeeData };
-    }, employee.leaderName,this.usersListPage.ROW_CSS_SELECTOR);
+    let response = await this.usersListPage.lookForEmployeeInEmployeesList(employee);
     await this.assert.eventually.equal(Promise.resolve(response.found), true);
     await this.assert.eventually.equal(
       Promise.resolve(response.employeeData.firstName),
