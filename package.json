@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/jagarzone6/vacations-management-tests-e2e#readme",
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "cucumber": "^5.1.0",
     "cucumber-html-reporter": "^5.0.0",
     "puppeteer": "^1.19.0"
