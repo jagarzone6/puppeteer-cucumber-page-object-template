@@ -1,7 +1,7 @@
 const { After, Before } = require("cucumber");
 
 Before(async function() {
-  return await this.launchBrowser();
+  await this.launchBrowser();
 });
 
 After(async function() {
