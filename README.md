@@ -1,5 +1,6 @@
-# vacations-management-tests-e2e
-E2E Tests for vacations-management app
+# puppeteer-cucumber-page-object-template
+E2E Tests for vacations-management app (example web app)
+
 
 ## Install dependencies
 
